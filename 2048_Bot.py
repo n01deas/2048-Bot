@@ -45,8 +45,6 @@ def getFeld():
     # Das Bild in grayscale Konvertieren um später nur einen Integer zu haben
     grayImage = ImageOps.grayscale(image)
 
-
-
     
     for index, Feldkoordinaten in enumerate (.........
         pixel = grayImage.getpixel(Feldkoordinaten)
