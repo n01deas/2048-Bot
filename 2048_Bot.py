@@ -45,10 +45,51 @@ def getFeld():
     # Das Bild in grayscale Konvertieren um später nur einen Integer zu haben
     grayImage = ImageOps.grayscale(image)
 
+
+
     
-    for index, Feldkoordinaten in enumerate (.........
+    for index, Feldkoordinaten in enumerate (Feldkoordinaten.felderArray)
         pixel = grayImage.getpixel(Feldkoordinaten)
-        print(pixel)
+        position = Values.valueArray.index(pixel)
+
+        if position == 1: 
+            aktuellesFeld[index] = 0
+
+        else:
+            aktuellesFeld[index] = pow(2, position)
+
+# Methode um das Feld auszugeben    
+def printFeld():
+    for i in range (16):
+        if i % 4 == 0 
+            print (" [ " + str(felderArray[i]) + " " + str(felderArray[i+1]) + " " + str(felderArray|i+2]) + " " + str(felderArray[i+3])
+
+
+# Methode für das Swipen einer Zeile 
+def swipeRow(reihe):
+    prev = -1 #vorheriges Element (es darf kein 0 Element sein) 
+    i = 0
+
+    temp =[0, 0, 0, 0 ] # temporäre Zeile
+
+    for element in reihe:
+        if element != 0 :
+            if prev == -1 :
+                prev = element 
+                temp[i] = element
+
+                i+= 1
+
+            elif prev == element:
+                temp[i - 1] = 2* prev
+
+                prev = -1 
+
+            else: 
+                prev = element
+                temp[i] = element
+                i += 1
+    return temp 
 
 # Klasse in der die Pixelwerte ihren Felder zugewiesen werden
 class PixelWerte:
